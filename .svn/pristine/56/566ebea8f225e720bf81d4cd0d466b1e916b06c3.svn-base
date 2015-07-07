@@ -1,0 +1,40 @@
+package view;
+
+import java.awt.Color;
+import java.util.Observable;
+import java.util.Observer;
+
+import javax.swing.BorderFactory;
+import javax.swing.JPanel;
+
+import model.Board;
+
+public class AbstractPanel extends JPanel implements Observer {
+
+  
+  /** The board. */
+  private Board my_board;
+  
+
+  protected AbstractPanel(final Board the_board) {
+    super(); 
+    my_board = the_board;
+    this.setOpaque(false);
+    this.setBorder(BorderFactory.createLineBorder(Color.black));
+  }
+  
+  public Board getBoard() {
+    return my_board;
+  }
+  
+  public void setBoard(final Board the_board) {
+    my_board = the_board;
+  }
+  
+  @Override
+  public void update(Observable arg0, Object arg1) {
+    // TODO Auto-generated method stub
+    
+  }
+  
+}
